@@ -2,5 +2,11 @@
   "name": "TrumpKvajeKage",
   "symbol": "TKK",
   "description": "A token for TrumpKvajeKage",
-  "image": "https://raw.githubusercontent.com/trumpkvajekage/tkk-metadata/main/trumpkvajekage.png"
+  "image": "https://raw.githubusercontent.com/trumpkvajekage/tkk-metadata/main/trumpkvajekage.png",
+  "socials": {
+    "telegram": "https://t.me/Trump_Kvaje_Kage",
+    "twitter": "https://x.com/trumpkvajekage?s=11",
+    "reddit": "https://www.reddit.com/r/TrumpKvajeKage/",
+    "discord": "https://discord.gg/CAGubNKE"
+  }
 }
