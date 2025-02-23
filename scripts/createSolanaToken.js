@@ -53,7 +53,7 @@ async function createAdvancedToken() {
     const mint = Keypair.generate();
     const mintAuthority = payer.publicKey;
     const decimals = 9;
-    const totalSupply = 25_000_000_000 * (10 ** decimals);
+    const totalSupply = 125_000_000_000 * (10 ** decimals);
     const rent = await connection.getMinimumBalanceForRentExemption(MintLayout.span);
 
     const transaction = new Transaction();
