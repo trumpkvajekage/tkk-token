@@ -9,7 +9,7 @@ TrumpKvajeKage (TKK) is a Solana-based token designed with a total supply of 125
   - 25B TKK: Unlocked in Primary Wallet.
   - 25B TKK: Transferred to Second Wallet.
   - 75B TKK: Locked in vesting vault, released over 1,095 days.
-- **Vesting Schedule**: Exponential (k=0.5), starting when triggered, releasing 600M TKK to Primary Wallet.
+- **Vesting Schedule**: Exponential (k=0.5), starting when triggered, releasing 75B TKK to Primary Wallet.
 
 ## Repository Structure
 - **scripts/**: Core JavaScript scripts for token management.
