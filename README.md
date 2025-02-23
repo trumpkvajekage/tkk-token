@@ -26,3 +26,28 @@ TrumpKvajeKage (TKK) is a Solana-based token designed with a total supply of 1 b
 - **Dependencies**: Install via npm:
   ```bash
   npm install @solana/web3.js @solana/spl-token @metaplex-foundation/umi-bundle-defaults @metaplex-foundation/mpl-token-metadata
+
+## Usage
+- **Update Configuration**:
+- Replace RPC endpoint in scripts (e.g., QuickNode URL for privacy).
+- Set `YourProgramIDHere` in `createSolanaToken.js` and `startProject.js` with deployed vesting program ID.
+- Provide `wallet.json` with funded keypair.
+- **Run Scripts**:
+- Initialize: `node scripts/createSolanaToken.js`.
+- Launch: `node scripts/startProject.js` (after updating placeholders).
+- Automate Burns: Deploy `dailyFeeBurn.js` to AWS Lambda with environment variables.
+
+## Anonymity
+- **Execution**: Use a VPN and private RPC endpoint (e.g., QuickNode) to mask IP during script runs.
+- **Wallet**: Keep `wallet.json` encrypted (e.g., `openssl enc -aes-256-cbc`) and avoid linking public key to identity.
+- **GitHub**: Commits don’t expose IP—use pseudonymous account details.
+
+## Socials
+- Telegram: [https://t.me/Trump_Kvaje_Kage](https://t.me/Trump_Kvaje_Kage)
+- Twitter: [https://x.com/trumpkvajekage?s=11](https://x.com/trumpkvajekage?s=11)
+- Reddit: [https://www.reddit.com/r/TrumpKvajeKage/](https://www.reddit.com/r/TrumpKvajeKage/)
+- Discord: [https://discord.gg/CAGubNKE](https://discord.gg/CAGubNKE)
+- GitHub: [https://github.com/trumpkvajekage](https://github.com/trumpkvajekage)
+
+## Contributing
+Feel free to fork, review, or suggest improvements via issues or pull requests. Ensure anonymity practices align with the project’s ethos.
