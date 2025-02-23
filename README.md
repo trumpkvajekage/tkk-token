@@ -1,14 +1,14 @@
 # TrumpKvajeKage (TKK) Token
 
-TrumpKvajeKage (TKK) is a Solana-based token designed with a total supply of 1 billion tokens, a 1% transfer fee, and a 3-year exponential vesting schedule (k=0.5) for 600 million tokens. This repository contains the scripts and metadata necessary to create, launch, and manage the token on Solana Mainnet.
+TrumpKvajeKage (TKK) is a Solana-based token designed with a total supply of 125 billion tokens, a 1% transfer fee, and a 3-year exponential vesting schedule (k=0.5) for 75 billion tokens. This repository contains the scripts and metadata necessary to create, launch, and manage the token on Solana Mainnet.
 
 ## Token Details
-- **Total Supply**: 1,000,000,000 TKK (9 decimals).
+- **Total Supply**: 125,000,000,000 TKK (9 decimals).
 - **Transfer Fee**: 1% (100 basis points), max 5 TKK per transfer, burned daily.
 - **Initial Allocation**:
-  - 200M TKK: Unlocked in Primary Wallet.
-  - 200M TKK: Transferred to Second Wallet.
-  - 600M TKK: Locked in vesting vault, released over 1,095 days.
+  - 25B TKK: Unlocked in Primary Wallet.
+  - 25B TKK: Transferred to Second Wallet.
+  - 75B TKK: Locked in vesting vault, released over 1,095 days.
 - **Vesting Schedule**: Exponential (k=0.5), starting when triggered, releasing 600M TKK to Primary Wallet.
 
 ## Repository Structure
