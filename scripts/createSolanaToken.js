@@ -53,7 +53,7 @@ async function createAdvancedToken() {
     const mint = Keypair.generate();
     const mintAuthority = payer.publicKey;
     const decimals = 9;
-    const totalSupply = 1_000_000_000 * (10 ** decimals);
+    const totalSupply = 25_000_000_000 * (10 ** decimals);
     const rent = await connection.getMinimumBalanceForRentExemption(MintLayout.span);
 
     const transaction = new Transaction();
@@ -136,8 +136,8 @@ async function createAdvancedToken() {
     const secondATA = await createATA(secondWallet, mint.publicKey);
     console.log('Second Wallet ATA:', secondATA.toBase58());
 
-    // Transfer 200M to second wallet (0% fee)
-    const transferAmount1 = 200_000_000 * (10 ** decimals);
+    // Transfer 25B to second wallet (0% fee)
+    const transferAmount1 = 25_000_000_000 * (10 ** decimals);
     await transfer(
       connection,
       payer,
@@ -149,10 +149,10 @@ async function createAdvancedToken() {
       undefined,
       TOKEN_2022_PROGRAM_ID
     );
-    console.log(`Transferred 200M TKK to Second Wallet ATA: ${secondATA.toBase58()}`);
+    console.log(`Transferred 25B TKK to Second Wallet ATA: ${secondATA.toBase58()}`);
 
-    // Vesting setup: Transfer 600M to vesting vault
-    const vestingAmount = 600_000_000 * (10 ** decimals);
+    // Vesting setup: Transfer 75B to vesting vault
+    const vestingAmount = 75_000_000_000 * (10 ** decimals);
     const vestingVault = Keypair.generate();
     const vestingVaultATA = await createATA(vestingVault, mint.publicKey);
     await transfer(
@@ -166,7 +166,7 @@ async function createAdvancedToken() {
       undefined,
       TOKEN_2022_PROGRAM_ID
     );
-    console.log(`Transferred 600M TKK to Vesting Vault ATA: ${vestingVaultATA.toBase58()}`);
+    console.log(`Transferred 75B TKK to Vesting Vault ATA: ${vestingVaultATA.toBase58()}`);
 
     // Initialize vesting with delayed start
     const vestingProgramId = new PublicKey('YourProgramIDHere');
@@ -186,10 +186,10 @@ async function createAdvancedToken() {
       data: Buffer.from([0, ...Buffer.from(vestingAmount.toString()), ...Buffer.from(periods.toString())]),
     });
     await sendAndConfirmTransaction(connection, new Transaction().add(initVestingIx), [payer, vestingAccount]);
-    console.log('Vesting vault initialized for 600M TKK, awaiting start trigger. Vault ATA:', vestingVaultATA.toBase58());
+    console.log('Vesting vault initialized for 75B TKK, awaiting start trigger. Vault ATA:', vestingVaultATA.toBase58());
 
-    // Remaining 200M stays in primary ATA
-    console.log('Remaining 200M TKK (unlocked) in Primary ATA:', primaryATA.toBase58());
+    // Remaining 25B stays in primary ATA
+    console.log('Remaining 25B TKK (unlocked) in Primary ATA:', primaryATA.toBase58());
 
     return { mint: mint.publicKey, payer, primaryATA, secondATA, vestingVaultATA, vestingAccount };
   } catch (error) {
@@ -256,9 +256,9 @@ async function main() {
 
     console.log('\nToken creation complete. Copy these values for startProject.js:');
     console.log('MINT_ADDRESS:', mint.toBase58());
-    console.log('Primary ATA (200M unlocked, vesting destination):', primaryATA.toBase58());
-    console.log('Second Wallet ATA (200M TKK):', secondATA.toBase58());
-    console.log('Vesting Vault ATA (600M locked):', vestingVaultATA.toBase58());
+    console.log('Primary ATA (25B unlocked, vesting destination):', primaryATA.toBase58());
+    console.log('Second Wallet ATA (25B TKK):', secondATA.toBase58());
+    console.log('Vesting Vault ATA (75B locked):', vestingVaultATA.toBase58());
     console.log('Vesting Account:', vestingAccount.publicKey.toBase58());
     console.log('Vesting Program ID: YourProgramIDHere');
     console.log('Note: Run startProject.js to set transfer fee and begin vesting');
